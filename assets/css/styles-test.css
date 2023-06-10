@@ -3,8 +3,9 @@
 
 :root {
   --hue-color: 234;
-  --background-color: hsl(var(--hue-color), 53%, 12%);
-  --big-font-size: 3rem;
+  --first-color: hsl(var(--hue-color), 53%, 12%);
+  --second-color: hsl(243, 46%, 67%);
+  --big-font-size: 5rem;
   --h1-font-size: 2.25rem;
   --h2-font-size: 1.5rem;
   --h3-font-size: 1.25rem;
@@ -26,16 +27,18 @@ html {
 
 .header__image {
   width: 100%;
-  height: auto;
+  height: 30vh;
+  object-fit: cover;
+  object-position: 50% 25%;
 }
 
 .header__content {
   position: absolute;
+  width: 80%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  padding: 20px;
 }
 
 .header__logo {
@@ -44,12 +47,22 @@ html {
 
 .header__text {
   font-family: "Poppins", sans-serif;
-  font-size: var(--big-font-size);
+  font-size: 6vw; /* Set the font size to 5% of the viewport width */
   font-weight: bold;
   color: #ffffff;
+  text-shadow: 8px 8px 2px rgba(0, 0, 0, 0.5);
 }
+
+.header__tagline {
+  font-family: "Poppins", sans-serif;
+  font-size: 2vw; /* Set the font size to 3% of the viewport width */
+  font-weight: bold;
+  color: #ffffff;
+  text-shadow: 8px 8px 4px rgba(0, 0, 0, 0.5);
+}
+
 .main {
-  background-color: var(--background-color);
+  background-color: var(--first-color);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -70,7 +83,7 @@ html {
 .footer {
   height: 20vh;
   padding: 1rem;
-  background-color: var(--background-color);
+  background-color: var(--first-color);
 }
 
 .footer__section1 {
@@ -111,4 +124,26 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Poppins", sans-serif;
+}
+
+.card {
+  border: none;
+}
+
+.card-body {
+  border: none;
+  background-color: var(--second-color);
+}
+
+.card-text {
+  font-family: "Poppins", sans-serif;
+  font-size: var(--normal-font-size);
+  color: white;
+}
+
+@media (min-width: 992px) {
+  .header__image {
+    height: 40vh;
+    object-position: 50% 50%;
+  }
 }
